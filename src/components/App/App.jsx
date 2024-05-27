@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from '../../pages/HomePage/HomePage';
 import Navigation from '../Navigation/Navigation';
 import MoviesPage from '../../pages/MoviesPage/MoviesPage';
+import MovieDetailsPage from '../../pages/MovieDetailsPage/MovieDetailsPage';
 import NotFound from '../../pages/NotFoundPage/NotFoundPage';
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
+        <Route path="/movies/:movieId" element={<MovieDetailsPage />}></Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

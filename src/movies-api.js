@@ -27,6 +27,11 @@ export const getSearchMovie = async question => {
   return response.data;
 };
 
+export const getMovieDetails = async movieId => {
+  const response = await axios.get(`movie/${movieId}`, options);
+  return response.data;
+};
+
 axios
   .get('trending/movie/day', options)
   .then(response => console.log(response))
