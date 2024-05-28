@@ -2,7 +2,8 @@
   display: flex;
   gap: 12px;
   list-style: none;
-  padding: 0;
+  padding: 8px;
+  margin: 0;
 }
 
 .link {

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { Suspense, useEffect, useState, useRef } from 'react';
 import {
   useParams,
   useLocation,
@@ -39,7 +39,9 @@ export default function MovieDetailsPage() {
 
   return (
     <div>
-      <Link to={backLinkRef.current}>Go back</Link>
+      <Link className={css.goBackBtn} to={backLinkRef.current}>
+        Go back
+      </Link>
       {loading && <b>Loading movie details...</b>}
       <div className={css.container}>
         <img
@@ -78,7 +80,9 @@ export default function MovieDetailsPage() {
         </ul>
       </div>
       <hr />
-      <Outlet />
+      <Suspense fallback={<div>Loading sub component...</div>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 }

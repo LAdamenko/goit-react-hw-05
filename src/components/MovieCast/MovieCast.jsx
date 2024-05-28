@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCredits } from '../../movies-api';
+import toast, { Toaster } from 'react-hot-toast';
 import css from './MovieCast.module.css';
+
+const notify = () => toast.error('Something wrong... Please, try again!');
 
 export default function MovieCast() {
   const [castList, setCastList] = useState({});
@@ -15,7 +18,7 @@ export default function MovieCast() {
         const data = await getMovieCredits(movieId);
         setCastList(data);
       } catch (error) {
-        console.log('error');
+        notify();
       } finally {
         setLoading(false);
       }
@@ -29,7 +32,7 @@ export default function MovieCast() {
         {loading && <b>Loading actors...</b>}
         {castList.length > 0 &&
           castList.map(({ id, name, character, profile_path }) => (
-            <li key={id}>
+            <li key={id} className={css.listItem}>
               <img
                 className={css.image}
                 src={
@@ -41,11 +44,12 @@ export default function MovieCast() {
                 alt={name}
                 width="200"
               />
-              <p>{name}</p>
+              <p className={css.actorsName}>{name}</p>
               <p>Character: {character}</p>
             </li>
           ))}
       </ul>
+      <Toaster position="top-center" />
     </div>
   );
 }

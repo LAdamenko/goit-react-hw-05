@@ -29,7 +29,7 @@ export default function SearchForm({ onSearch }) {
         <button className={css.btn} type="submit">
           Search
         </button>
-        <Toaster position="top-right" />
+        <Toaster position="top-center" />
       </Form>
     </Formik>
   );
