@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  padding: 8px;
+}
+
+.image {
+  margin-right: 24px;
+}
+
+.movieDetailContainer {
+  padding: 24px 8px;
+}
+
+.score {
+  margin-top: 24px;
+}
+
+.subtytle {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.genres {
+  display: flex;
+  gap: 8px;
+}
+
+.addInfo {
+  list-style: inside;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+.addInfoContainer {
+  padding: 8px;
+}
+
+.addInfoItem {
+  margin-left: 20px;
+}

@@ -32,7 +32,17 @@ export const getMovieDetails = async movieId => {
   return response.data;
 };
 
-axios
-  .get('trending/movie/day', options)
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
+export const getMovieCredits = async movieId => {
+  const response = await axios.get(`movie/${movieId}/credits`, options);
+  return response.data.cast;
+};
+
+export const getMovieReviews = async movieId => {
+  const response = await axios.get(`movie/${movieId}/reviews`, options);
+  return response.data;
+};
+
+// axios
+//   .get('trending/movie/day', options)
+//   .then(response => console.log(response))
+//   .catch(err => console.error(err));
