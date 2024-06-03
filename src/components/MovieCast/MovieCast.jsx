@@ -7,7 +7,7 @@ import css from './MovieCast.module.css';
 const notify = () => toast.error('Something wrong... Please, try again!');
 
 export default function MovieCast() {
-  const [castList, setCastList] = useState({});
+  const [castList, setCastList] = useState([]);
   const { movieId } = useParams();
   const [loading, setLoading] = useState(false);
 

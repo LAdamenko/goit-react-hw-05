@@ -4,7 +4,7 @@ import { getMovieReviews } from '../../movies-api';
 import css from './MovieReviews.module.css';
 
 export default function MovieReviews() {
-  const [reviewsList, setReviewsList] = useState({});
+  const [reviewsList, setReviewsList] = useState([]);
   const { movieId } = useParams();
   const [loading, setLoading] = useState(false);
 
